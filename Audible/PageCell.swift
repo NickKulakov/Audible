@@ -14,11 +14,15 @@ class PageCell: UICollectionViewCell {
             guard let page = page else {
            return
             }
-            imageView.image = UIImage(named: page.imageName)
+            var imageName = page.imageName
+            if UIDevice.current.orientation.isLandscape {
+                imageName += "_landscape"
+            }
+            imageView.image = UIImage(named: imageName)
             
             let color = UIColor(white: 0.2, alpha: 1)
 
-            let attributedText = NSMutableAttributedString(string: "\n\(page.title)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: .medium), kCTForegroundColorAttributeName as NSAttributedStringKey: color])
+            let attributedText = NSMutableAttributedString(string: page.title, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: .medium), kCTForegroundColorAttributeName as NSAttributedStringKey: color])
             
             attributedText.append(NSAttributedString(string: "\n\n\(page.message)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), kCTForegroundColorAttributeName as NSAttributedStringKey: color]))
             
@@ -27,16 +31,6 @@ class PageCell: UICollectionViewCell {
             let length = attributedText.string.characters.count
             attributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, length))
             
-            
-//            let attributedTextTitle = NSMutableAttributedString(string: "\n\(page.title)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: .medium), kCTForegroundColorAttributeName as NSAttributedStringKey: color])
-//            let attributedTextMessage = NSMutableAttributedString(string: "\n\n\(page.message)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), kCTForegroundColorAttributeName as NSAttributedStringKey: color])
-//
-        
-            //textView.text = page.title + "\n\n" + page.message
-
-            // attributedTextTitle.append(attributedTextMessage)
-            //textView.attributedText = attributedTextTitle
-            //textView.attributedText = attributedText
             textView.attributedText = attributedText
             
         }

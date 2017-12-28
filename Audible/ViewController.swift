@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -95,8 +95,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         nextButtonTopAnchor = nextButton.anchor(top: view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 16, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 50).first
         //use autolayout instead
         collectionView.anchorToTop(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
-        
-        //collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         registerCells()
     }
     
@@ -107,7 +105,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @objc func keyboardShow() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIViewAnimationOptions.curveEaseOut, animations: {
-            self.view.frame = CGRect(x: 0, y: -50, width: self.view.frame.width, height: self.view.frame.height)
+            let y: CGFloat = UIDevice.current.orientation.isLandscape ?
+                -110 : -50
+            self.view.frame = CGRect(x: 0, y: y, width: self.view.frame.width, height: self.view.frame.height)
         }, completion: nil)
     }
     
@@ -127,7 +127,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // we are on the last page
         if pageNumber == pages.count {
             moveControlConstraintsOffScreen()
-        } else{
+        } else {
             //back on regular pages
             pageControlBottomAnchor?.constant = 0
             skipButtonTopAnchor?.constant = 16
@@ -167,5 +167,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
     }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.collectionViewLayout.invalidateLayout()
+        
+        let indexPath = IndexPath(item: pageControl.currentPage, section: 0)
+        DispatchQueue.main.async {
+            self.collectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+            self.collectionView.reloadData()
+        }
+ }
 }
 
