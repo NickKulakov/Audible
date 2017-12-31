@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		D04151331FEE497B00C7CDCF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04151321FEE497B00C7CDCF /* Extensions.swift */; };
 		D0445B041FF6AF0600E15EDD /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0445B031FF6AF0600E15EDD /* MainNavigationController.swift */; };
+		D04F6EEC1FF81DEC007DFAE2 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F6EEB1FF81DEC007DFAE2 /* HomeController.swift */; };
 		D050651A1FF151A500356DFD /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05065191FF151A500356DFD /* LoginCell.swift */; };
 		D081FA7A1FE7E56D00EF17CB /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D081FA791FE7E56D00EF17CB /* PageCell.swift */; };
+		D09121BD1FF8BF3F003E9F9A /* UserDefaults+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09121BC1FF8BF3F003E9F9A /* UserDefaults+helpers.swift */; };
 		D0A1E1C71FE8F80400677E6D /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1E1C61FE8F80400677E6D /* Page.swift */; };
 		D0D752F61FE466C100433C1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D752F51FE466C100433C1F /* AppDelegate.swift */; };
 		D0D752F81FE466C100433C1F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D752F71FE466C100433C1F /* LoginController.swift */; };
@@ -22,8 +24,10 @@
 /* Begin PBXFileReference section */
 		D04151321FEE497B00C7CDCF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D0445B031FF6AF0600E15EDD /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		D04F6EEB1FF81DEC007DFAE2 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		D05065191FF151A500356DFD /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		D081FA791FE7E56D00EF17CB /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		D09121BC1FF8BF3F003E9F9A /* UserDefaults+helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+helpers.swift"; sourceTree = "<group>"; };
 		D0A1E1C61FE8F80400677E6D /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		D0D752F21FE466C000433C1F /* Audible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Audible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D752F51FE466C100433C1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,10 +75,12 @@
 				D0D752F71FE466C100433C1F /* LoginController.swift */,
 				D0A1E1C61FE8F80400677E6D /* Page.swift */,
 				D04151321FEE497B00C7CDCF /* Extensions.swift */,
-				D0445B031FF6AF0600E15EDD /* MainNavigationController.swift */,
 				D0D752FC1FE466C100433C1F /* Assets.xcassets */,
 				D0D752FE1FE466C100433C1F /* LaunchScreen.storyboard */,
 				D0D753011FE466C100433C1F /* Info.plist */,
+				D04F6EEB1FF81DEC007DFAE2 /* HomeController.swift */,
+				D0445B031FF6AF0600E15EDD /* MainNavigationController.swift */,
+				D09121BC1FF8BF3F003E9F9A /* UserDefaults+helpers.swift */,
 			);
 			path = Audible;
 			sourceTree = "<group>";
@@ -155,9 +161,11 @@
 				D0D752F81FE466C100433C1F /* LoginController.swift in Sources */,
 				D0D752F61FE466C100433C1F /* AppDelegate.swift in Sources */,
 				D0A1E1C71FE8F80400677E6D /* Page.swift in Sources */,
+				D04F6EEC1FF81DEC007DFAE2 /* HomeController.swift in Sources */,
 				D0445B041FF6AF0600E15EDD /* MainNavigationController.swift in Sources */,
 				D081FA7A1FE7E56D00EF17CB /* PageCell.swift in Sources */,
 				D050651A1FF151A500356DFD /* LoginCell.swift in Sources */,
+				D09121BD1FF8BF3F003E9F9A /* UserDefaults+helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
